@@ -182,5 +182,69 @@ pull -> create -> start -> do not attach
    91  docker run -d httpd
    92  clear
    93  docker ps
+=============================================
+1. How to create image?
+
+Image 
+		rootfs + usersfs + appfs
+
+Using existing Container
+========================================
+
+Image = ubuntu + git + apache + java
+
+ 111  docker run -itd ubuntu
+  112  docker ps
+  113  clear
+  114  docker exec -it f2c872c5d1f3 /bin/bash
+  115  clear
+  116  dcoker ps
+  117  docker ps
+  118  docker exec f2c872c5d1f3 java
+  119  clear
+  120  docker exec f2c872c5d1f3 git
+  121  clear
+  122  docker exec f2c872c5d1f3 which apache2
+  123  docker commit -m"ub-up-git-ap-java" -a"Rajesh Kumar" f2c872c5d1f3 ub-up-git-ap-java
+  124  docker images
+  125  docker run -itd --name raju1 ub-up-git-ap-java
+  126  dcoker ps
+  127  clear
+  128  docker ps
+  129  docker exec raju1 git
+  130  clear
+  131  docker exec raju1 java
+  132  clear
+  133  docker exec raju1 which apache2
+
+
+2. How to share an image?
+
+
+  136  docker images
+  137  docker login
+  138  docker login
+  139  clear
+  140  docker login
+  141  docker images
+  142  docker tag ub-up-git-ap-java devopsschools/mondayaug20222
+  143  clear
+  144  docker images
+  145  docker push devopsschools/mondayaug20222
+  146  history
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
