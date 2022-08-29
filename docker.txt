@@ -1,0 +1,186 @@
+What is Docker?
+---------------------
+		Platform Or tool
+		- Manages Container
+			- Manages Storage
+			- Manages Networking
+			- Manages Images
+
+		tool
+		- Save cost (ram - cpu - disk - os)
+		- Save time ( 1 sec)
+		- Improve Quality of the soft
+		
+
+RUNNING A APPS
+-------------------------------
+HUMAN		hypervisor			Docker
+PS   ---->   VS ----------> Container
+
+What is Container?
+--------------------------
+- its lightweight APP Runtime Indenpendent env - powered by Kernal - manage by docker
+- Own resources
+
+Jenkins < - Tomcat < - JAVA
+---------------------------
+
+VM Image == Bootfs + Rootfs + userfs + Appfs
+		    Kernal + 
+Docker image == Rootfs + userfs + Appfs
+
+For running app
+Hardware
+		Kernel 
+					1 USER
+					1 ROOTFS
+					1 PID
+					1 net
+
+
+Kernal  - OS
+==============================================================
+How to install Docker?
+15.206.124.9
+https://www.devopsschool.com/blog/docker-installation-and-configurations/
+
+Container LifeCycle
+---------------------------------------------------
+create -> start - stop -> start -> restart -> pause -> unpause -> kill -> remove
+
+Docker Components
+=========================
+Docker
+	Docker Engine
+
+Docker Image
+-------------------
+VM Image == Bootfs + Rootfs + userfs + Appfs
+		    Kernal + 
+
+Docker image == Rootfs + userfs + Appfs
+				  ubuntu + root + ls	
+					centos + apache + java + tomcat + app
+					centos
+
+Docker Registry
+-------------------
+			Repository
+					version of filesystem
+
+		hub.docker.com
+
+Docker COntainer
+-----------------------
+		The moment u RUN docker image
+		-----------------------------------
+human --> client -> server -> containerd -> kernel 
+
+									by Docker with a help of Kernal
+			1 ROOTFS created using Image 
+			1 NET created 				
+			1 PID created 	
+			1 USER created
+
+			ATTACH THIS USER WITH NET+ROOTFS+PID == 1 Container
+=========================================================
+
+Container LifeCycle
+---------------------------------------------------
+create -> start - stop -> start -> restart -> pause -> unpause -> kill -> remove
+
+
+13  docker
+   14  clear
+   15  docker version
+   16  clear
+   17  docker info
+   18  clear
+   19  docker ps
+   20  docker ps -a
+   21  docker images
+   22  docker pull httpd
+   23  docker images
+   24  clear
+   25  docker create --name=raj1 httpd
+   26  docker ps
+   27  docker ps -a
+   28  docker create --name=raj2 httpd
+   29  docker ps -a
+   30  dcoker start raj2
+   31  docker start raj2
+   32  docker ps -a
+   33  docker stop raj2
+   34  docker ps -a
+   35  docker start raj2
+   36  clear
+   37  docker start raj2
+   38  docker ps -a
+   39  docker restart raj2
+   40  docker ps -a
+   41  docker pause raj2
+   42  docker ps -a
+   43  docker unpause raj2
+   44  clear
+   45  docker ps -a
+   46  docker kill raj2
+   47  docker ps -a
+   48  docker rm raj2
+   49  docker ps -a
+===================================
+LAPTOP
+VM 
+		GO INSIDE A VM			- shell 
+		ACCESS FROM OUTSIDE 	- network
+
+ 54  docker ps
+   55  docker ps -a
+   56  docker start ab5ee93e5ed5
+   57  clear
+   58  docker start ab5ee93e5ed5
+   59  docker ps -a
+   60  docker exec ab5ee93e5ed5 ls
+   61  ls
+   62  docker exec ab5ee93e5ed5 df
+   63  df
+   64  docker exec ab5ee93e5ed5 du
+   65  du
+   66  docker exec ab5ee93e5ed5 ls /
+   67  ls /
+   68  clear
+   69  docker exec -it ab5ee93e5ed5 /bin/bash
+   70  docker ps
+   71  clear
+   72  docker ps
+   73  docker inspect ab5ee93e5ed5
+   74  curl http://172.17.0.2
+   75  curl http://172.17.0.2
+=================================================
+run
+-----------------------------------
+pull -> create -> start -> attach
+
+run -d
+-----------------------------------
+pull -> create -> start -> do not attach
+
+ 76  history
+   77  clear
+   78  ls
+   79  docker ps
+   80  docker attach ab5ee93e5ed5
+   81  docker ps
+   82  docker ps -a
+   83  docker run --name=raj3 httpd
+   84  clear
+   85  docker run -d httpd
+   86  docker ps -a
+   87  docker run -d httpd
+   88  docker run -d httpd
+   89  docker run -d httpd
+   90  docker run -d httpd
+   91  docker run -d httpd
+   92  clear
+   93  docker ps
+
+
