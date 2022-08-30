@@ -137,16 +137,84 @@ Deployment						Multiple Ec2 + ASG
 Services						LB
 
 
+kubectl taint node ip-172-31-19-69 node-role.kubernetes.io/master:NoSchedule-
 
 
+Namespace
+====================
 
 
+API Server ---> 72 API
+
+EACH API == ONE FUNCTION
+
+	DEV							END USR
+	---------------------------------------------
+	CREATE						url/PUT
+
+	READ							GET
+
+	UPDATE						POST
+
+	DELETE						DELETE
+=========================================
+
+CREATE
+		CMD
+				create
+		YAML
+				create -f yaml
+READ
+		CMD
+				get
+				describe
+		YAML
+				get -f yaml
+UPDATE
+		CMD 
+				edit 
+				
+		YAMl
+				apply -f yaml
+DELETE
+		CMD 
+				delete
+		YAMl
+				delete -y yaml
+============================================
 
 
-
-
-
-
+   81  kubectl create ns dev
+   82  kubectl create ns qa
+   83  clear
+   84  kubectl create ns dev
+   85  kubectl get ns
+   86  more $HOME/.kube/config
+   87  clear
+   88  kubectl config view
+   89  clear
+   90  kubectl api-resources
+   91  clear
+   92  kubectl get pods --all-namespaces
+   93  kubectl api-resources
+   94  clear
+   95  kubectl api-resources | wc -l
+   96  kubectl api-resources
+   97  clear
+   98  kubectl
+   99  clear
+  100  kubectl get ns
+  101  kubectl create ns raju
+  102  kubectl get ns
+  103  kubectl edit ns  raju
+  104  kubectl get ns
+  105  kubectl describe  ns rajhu
+  106  clear
+  107  kubectl describe  ns raju
+  108  kubectl delete ns raju
+  109  kubectl get  ns rajhu
+  110  kubectl get  ns
+  111  history
 
 
 
