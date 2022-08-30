@@ -1,0 +1,155 @@
+What is Kubernetes?
+========================
+		From Google
+		Donated to CNCF
+		Written in Go
+		Version - 1.24
+
+		Limitation of Docker?
+		-------------------------
+		2 - Hours - TheDevOpsSchool
+==================================================
+Installing Kubernetes
+-------------------------
+
+Kubernetes Componenets - Architecture
+---------------------------------------
+
+Ops(Human) -> Workstation -> K8 Cluster
+
+Workstation
+- Kubectl --> config(file)
+
+K8 Cluster
+================================
+Master Node
+= kubectl + kubelet + kubeadm + docker + containerd 
+
+- API Server		- FrontEnd of Cluster
+- Etcd			- DB of Cluster
+- Schedular		- Schedule work to node
+- Controller Manager - Monitoring Mech
+- Proxy			- Networking services
+- DNS services	- DNS services
+
+
+Worker Node
+================================
+= kubectl + kubelet + kubeadm + docker + containerd 
+- Proxy
+
+kubeadm - centos 7 - https://www.devopsschool.com/blog/setting-up-kubernetes-clusters-using-kubeadm-manual-way-in-rhel-7-centos7/
+
+kubenetes 1.23++++ DOCKER IS DEAD with ContainerD
+kubenetes 1.22 --
+
+Ubuntu - https://www.devopsschool.com/blog/kubernetes-1-23-6-cluster-setup-master-and-worker-in-ubuntu-20-04/
+
+Master - 3.110.215.251
+Worker - 13.232.237.174
+
+
+kubeadm join 172.31.19.69:6443 --token 2opgt4.hjj6vzb8kz8gd39x --discovery-token-ca-cert-hash sha256:250235c958892271ec2c43245e5d0302d24ec3654ad372c7b7a294c4c84ebecd
+
+
+  1  git clone https://github.com/certifications-tutorials/cks-course-environment
+    2  clear
+    3  ls
+    4  cd cks-course-environment
+    5  ls
+    6  cd cluster-setup/
+    7  clear
+    8  ls
+    9  cd latest
+   10  clear
+   11  ls
+   12  chmod 755 install_master.sh
+   13  clear
+   14  ls
+   15  ./install_master.sh
+   16  cealr
+   17  clear
+   18  cd
+   19  clear
+   20  ls
+   21  clear
+   22  kubectl get nodes
+   23  sudo -s
+   24  kubectl get pods --all-namespaces
+   25  which kubectl
+   26  which kubelet
+   27  which docker
+   28  which dockerd
+   29  which containerd
+   30  which kubeadm
+   31  clear
+   32  ls
+   33  kubectl get nodes
+   34  history
+
+
+=============================================
+What is Pod?
+----------------------------
+Vmware					Docker					Kubernetes
+--------------------------------------------------------
+vms						Container				POD			
+------------------------------------------------------------------
+OS						Rootfs					Container(S)
+----------------------------------------------------------
+IPADD					IPAddd					IPADDD
+-----------------------------------------------------------
+Container Lifecycle - PHYSICAL ENTITY
+
+POD Lifecycle 		 - LOGICAL ENTITY
+-------------------------------
+PENDING --> RUNNING - SUCCESSED/FAIL
+========================================================
+ 35  clear
+   36  kubectl get nodes
+   37  kubectl get pods --all-namespaces
+   38  kubectl describe pod canal-nb4ng  --all-namespaces
+   39  kubectl describe pod canal-nb4ng -n=kube-system
+   40  clear
+   41  ls
+   42  kubectl
+   43  kubectl ap-resources
+   44  kubectl api-resources
+   45  clear
+   46  kubectl api-resources | wc -l
+   47  kubectl api-resources
+   48  clear
+   49  kubectl api-resources
+   50  clear
+   51  kubectl api-versions
+   52  clear
+   53  kubectl version
+   54  clear
+   55  ls
+   56  history
+
+==========================
+Namespace
+POD								EC2-Instance
+ReplicationControler			ASG
+
+Deployment						Multiple Ec2 + ASG
+Services						LB
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
