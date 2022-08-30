@@ -45,7 +45,7 @@ kubenetes 1.22 --
 
 Ubuntu - https://www.devopsschool.com/blog/kubernetes-1-23-6-cluster-setup-master-and-worker-in-ubuntu-20-04/
 
-Master - 3.110.215.251
+Master - 3.110.215.251 'ubuntu/raju123'
 Worker - 13.232.237.174
 
 
