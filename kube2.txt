@@ -1,0 +1,173 @@
+Master - 65.2.38.185
+Worker - 13.127.155.18
+=============================
+
+
+CREATE
+		CMD
+				create
+		YAML
+				create -f yaml
+READ
+		CMD
+				get
+				describe
+		YAML
+				get -f yaml
+UPDATE
+		CMD 
+				edit 
+				
+		YAMl
+				apply -f yaml
+DELETE
+		CMD 
+				delete
+		YAMl
+				delete -y yaml
+============================================
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nodehelloworld.example.com
+  labels:
+    app: helloworld
+spec:
+  containers:
+  - name: devopsschool1
+    image: scmgalaxy/nginx-devopsschoolv1
+    ports:
+    - name: nginx-port
+      containerPort: 80
+------------------------------------------------
+
+How can i access pod?
+---------------------------
+
+
+ 497  mkdir rajesh
+  498  pwd
+  499  vi pod1.yaml
+  500  clear
+  501  ls
+  502  clear
+  503  ls
+  504  kubectl create -f pod1.yaml
+  505  kubectl get pods
+  506  kubectl get ns
+  507  clear
+  508  kubectl get ns
+  509  kubectl get pods
+  510  kubectl create ns rajesh
+  511  clear
+  512  kubectl create -f pod1.yaml -n=rajesh
+  513  kubectl get pods
+  514  kubectl get pods -n=rajesh
+  515  kubectl create -f pod1.yaml -n=rajesh
+  516  clear
+  517  ls
+  518  kubectl get pods
+  519  kubectl delete pod nodehelloworld.example.com
+  520  clear
+  521  ls
+  522  kubectl get pods
+  523  kubectl get pods -n=rajesh
+  524  kubectl edit pods nodehelloworld.example.com  -n=rajesh
+  525  kubectl get pods -n=rajesh
+  526  kubectl get pods -n=rajesh --show-lables
+  527  kubectl get pods -n=rajesh --show-labels
+  528  kubectl describe pods nodehelloworld.example.com -n=rajesh
+  529  clear
+  530  ls
+  531  clear
+  532  ls
+  533  vi pod1.yaml
+  534  kubectl apply -f pod1.yaml
+  535  kubectl apply -f pod1.yaml -n=rajesh
+  536  kubectl delete -f pod1.yaml
+  537  kubectl get pods -n=rajesh --show-labels
+  538  clear
+  539  ls
+  540  kubectl get pods -n=rajesh -o wide
+  541  curl http://192.168.0.6
+  542  kubectl exec -it nodehelloworld.example.com /bin/bash
+  543  kubectl exec -it nodehelloworld.example.com /bin/bash -n=rajesh
+  544  clear
+  545  curl http://192.168.0.6
+  546  kubectl exec -h
+  547  clear
+  548  history
+
+
+
+Troubleshooting and Debugging Commands:
+  describe      Show details of a specific resource or group of resources
+
+  logs          Print the logs for a container in a pod
+  attach        Attach to a running container
+  exec          Execute a command in a container
+  port-forward  Forward one or more local ports to a pod
+
+  cp            Copy files and directories to and from containers
+  auth          Inspect authorization
+
+------------------------------------------------
+PS				VS				Container
+-------------------------------------------------
+1				1				1
+
+
+================================================
+					OCI
+				-------------
+			- COntainer Runtime
+			- Image Spec
+			- Network
+Docker
+	Image	- OCI
+	Container -- NOT following
+
+https://www.devopsschool.com/blog/docker-support-is-removed-from-kubernetes-1-23-version/
+https://www.devopsschool.com/blog/what-is-the-future-of-docker-and-kubernetes-engineers/
+
+
+kubectl port-forward --address 0.0.0.0 pod/nodehelloworld.example.com 8888:80 -n=rajesh
+
+
+
+
+549  clear
+  550  ls
+  551  kubectl
+  552  clear
+  553  kubectl gets pods -n=rajesh
+  554  kubectl get pods -n=rajesh
+  555  kubectl logs nodehelloworld.example.com -n=rajesh
+  556  curl http://192.168.0.6
+  557  kubectl logs nodehelloworld.example.com -n=rajesh
+  558  kubectl attach nodehelloworld.example.com -n=rajesh
+  559  curl http://192.168.0.6
+  560  clear
+  561  ls
+  562  port-forward -h
+  563  kubectl port-forward -h
+  564  clear
+  565  kubectl get pods -n=rajesh
+  566  kubectl port-forward --address 0.0.0.0 pod/nodehelloworld.example.com 8888:80
+  567  clear
+  568  kubectl port-forward --address 0.0.0.0 pod/nodehelloworld.example.com 8888:80 -n=rajesh
+  569  history
+
+
+  572  kubectl auth can-i pod create
+  573  kubectl auth can-i pod delete
+
+
+
+
+
+
+
+
+
+
