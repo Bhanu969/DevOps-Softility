@@ -251,8 +251,30 @@ spec:
   631  clear
   632  kubectl get pods -n=rajesh
 
+=============================================================
 
+Deployment
+-------------------------
+50%
 
+Deployment
+====================================================
+Replication + Controller + Versioning + Rollout + Rollback
+-------------------------
+	Replicasets
+
+replicationcontroller ==> replicationcontroller++ === Replicasets
+
+50% - COMMANDS - 
+
+kubectl create deployment my-dep --image=scmgalaxy/nginx-devopsschoolv1 --replicas=3 -n=rajesh
+
+ONE READ - https://www.devopsschool.com/blog/kubernetes-deployment-strategy-explained-with-example/
+
+Example  -https://www.devopsschool.com/blog/kubernetes-deployment-example-programs/
+
+LAB
+https://www.devopsschool.com/blog/kubernetes-deployment-strategy-explained-with-example/
 
 
 
