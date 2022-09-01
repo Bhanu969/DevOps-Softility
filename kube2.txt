@@ -167,6 +167,92 @@ kubectl port-forward --address 0.0.0.0 pod/nodehelloworld.example.com 8888:80 -n
 
 
 
+root@ip-172-31-24-50:/home/ubuntu# kubeadm join 172.31.19.69:6443 --token 2opgt4.hjj6 vzb8kz8gd39x --discovery-token-ca-cert-hash sha256:250235c958892271ec2c43245e5d0302d2 4ec3654ad372c7b7a294c4c84ebecd
+[preflight] Running pre-flight checks
+
+error execution phase preflight: couldn't validate the identity of the API Server: co uld not find a JWS signature in the cluster-info ConfigMap for token ID "2opgt4"
+To see the stack trace of this error execute with --v=5 or higher
+
+
+root@ip-172-31-24-50:/home/ubuntu# kubeadm join 172.31.19.69:6443 --token 4o6agr.3fvybfibldzrnejq --discovery-token-ca-cert-hash sha256:250235c958892271ec2c43245e5d0302d2 4ec3654ad372c7b7a294c4c84ebecd
+
+
+
+kubeadm join 172.31.19.69:6443 --token qasdft.wryple1ohugxjzge --discovery-token-ca-cert-hash sha256:250235c958892271ec2c43245e5d0302d24ec3654ad372c7b7a294c4c84ebecd
+
+qasdft.wryple1ohugxjzge
+
+kubeadm join 172.31.19.69:6443 --token qasdft.wryple1ohugxjzge --discovery-token-ca-cert-hash sha256:3bf0af89752a580727e527b25965d99e111dcc69185846b3f3d1e5d4a5f2865a
+
+=====================================================================================
+ReplicationController
+
+
+Replication	- You can get many PODS.
+Controller	- Make sure Desire === Actual
+
+
+
+
+apiVersion: v1
+kind: ReplicationController
+metadata:
+  name: replicationcontroller-example
+spec:
+  replicas: 3
+  template:
+    metadata:
+      labels:
+        app: nginx
+    spec:
+      containers:
+      - name: nginx
+        image: scmgalaxy/nginx-devopsschoolv1
+
+
+ 593  kubectl get rc -n=rajesh
+  594  clear\
+  595  clear
+  596  ls
+  597  clear
+  598  kubectl get rc
+  599  clear
+  600  ls
+  601  kubectl create -f rc.yaml -n=rajesh
+  602  kubectl get rc -n=rajesh
+  603  kubectl get pods
+  604  kubectl get pods -n=rajesh
+  605  clear
+  606  ls
+  607  kubectl get rc -n=rajesh
+  608  kubectl edit rc replicationcontroller-example -n=rajesh
+  609  kubectl get pods -n=rajesh
+  610  \clear
+  611  kubectl get pods -n=rajesh
+  612  kubectl get rc -n=rajesh
+  613  clear
+  614  ls
+  615  vi rc.yaml
+  616  kubectl apply -f rc.yaml -n=rajesh
+  617  kubectl get rc -n=rajesh
+  618  kubectl get pods -n=rajesh
+  619  kubectl delete rc replicationcontroller-example -n=rajesh
+  620  kubectl get rc -n=rajesh
+  621  vi rc.yaml
+  622  clear
+  623  ls
+  624  kubectl apply -f rc.yaml -n=rajesh
+  625  kubectl get pods -n=rajesh
+  626  clear
+  627  ls
+  628  kubectl get pods -n=rajesh
+  629  kubectl delete pod replicationcontroller-example-4lq66 replicationcontroller-example-8rsq2
+  630  kubectl delete pod replicationcontroller-example-4lq66 replicationcontroller-example-8rsq2 -n=rajesh
+  631  clear
+  632  kubectl get pods -n=rajesh
+
+
+
 
 
 
