@@ -1,0 +1,43 @@
+Master - 13.232.255.166
+Worker - 52.66.209.3
+
+
+kubectl create service clusterip my-cs --tcp=5678:8080 -n=rajesh
+
+--tcp=5678:80
+
+5678 = Service port
+80 = COntainer port
+
+kubectl create service clusterip my-cs-new --tcp=5678:80 -n=rajesh
+
+
+ 2058  kubectl get pods -n=rajesh
+ 2059  kubectl get pods -n=rajesh --show-labels
+ 2060  kubectl create service -h
+ 2061  kubectl create service clusterip -h
+ 2062  clear
+ 2063  kubectl get svc -n=rajesh
+ 2064  kubectl create service clusterip my-cs --tcp=5678:8080 -n=rajesh
+ 2065  kubectl get svc -n=rajesh
+ 2066  kubectl describe svc my-cs -n=rajesh
+ 2067  kubectl create service clusterip my-cs1 --tcp=5678:80-n=rajesh
+ 2068  kubectl create service clusterip my-cs-new --tcp=5678:80-n=rajesh
+ 2069  clear
+ 2070  kubectl create service clusterip my-cs-new --tcp=5678:80 -n=rajesh
+ 2071  kubectl describe svc my-cs-new -n=rajesh
+ 2072  clear
+ 2073  kubectl get pods -n=rajesh --show-labels
+ 2074  kubectl get svc -n=rajesh --show-labels
+ 2075  kubectl describe svc my-cs-new -n=rajesh
+ 2076  kubectl edit svc my-cs-new -n=rajesh
+ 2077  kubectl get pods -n=rajesh --show-labels
+ 2078  kubectl get svc -n=rajesh --show-labels
+ 2079  kubectl describe svc my-cs-new -n=rajesh
+ 2080  kubectl edit svc my-cs-new -n=rajesh
+ 2081  kubectl describe svc my-cs-new -n=rajesh
+ 2082  curl http://10.109.113.68:5678
+ 2083  clear
+ 2084  curl http://10.109.113.68:5678
+ 2085  watchcurl http://10.109.113.68:5678
+ 2086  watch curl http://10.109.113.68:5678
